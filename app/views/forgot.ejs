@@ -1,0 +1,54 @@
+<%- include("./layouts/header"); -%>
+
+	<div id="my-page">
+		<div id="my-header">
+			<header class="site-header">
+
+				<% include partial/top-line %>
+
+					<div class="header-center">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="header-composition">
+										<h2>Конфиденциально. Удобно. Быстро.</h2>
+										<p>Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+											Ad minim veniam, quis nostrud exercitation ullamco nisi commodo consequat. </p>
+									</div>
+								</div>
+								<div class="col-lg-5 offset-lg-1 form-box">
+									<div class="register-form wow zoomInRight" data-wow-duration="1.5s" data-wow-delay="1.4s">
+										<div class="forgot-container">
+											<form action="/forgot" method="post" class="forgot">
+
+												<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+												<div class="form-header">
+													<h3>Забыл пароль</h3>
+													<% include ./partial/_messages %>
+												</div>
+
+												<div class="form-group">
+													<label for="emailForgot">Электронная почта</label>
+													<input type="email" name="emailForgot" id="emailForgot">
+													<div id="tooltipEmailForgot" class="validation"></div>
+												</div>
+
+												<div class="form-group">
+													<button type="submit" class="button-ex forgot">
+														<i class="fas fa-circle-notch fa-spin"></i>Сброс пароля
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</header>
+		</div>
+	</div>
+
+<%- include("./layouts/content"); -%>
+
+<%- include("./layouts/footer"); -%>

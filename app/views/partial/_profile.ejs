@@ -1,0 +1,138 @@
+<div class="manage-panel">
+
+    <span class="tooltipError" data-tooltip-content="#tooltip_content"></span>
+	<div class="tooltip_templates">
+		<span id="tooltip_content">
+			<% include _messages %>
+		</span>
+    </div>
+    
+    <div class="profile">
+        <div class="header">
+            <div class="menu">
+                <div class="toggle"><i class="fas fa-align-right"></div></i>
+                <div class="list">
+                    <ul>
+                        <li><a href="#">Главное меню</a></li>
+                        <li><a href="#">Друзья</a></li>
+
+                        <% if(user.provider === "local") { %>
+                            <li><a href="/changePassword">Смена пароля</a></li>
+                        <% } %>
+
+                        <li><a href="#">Подписка</a></li>
+                        <li><a href="#">Настройки</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about-me">
+                <div class="name"><%= user.name %></div>
+                <div class="status">
+                    <a href="#" class="open-form"><%= user.status %></a>
+                    <div class="form-change-status">
+                        <form action="/profile/status" method="POST" class="statusForm">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <input type="text" name="statusText" id="status">
+                            <button type="submit" class="button-ex status">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+
+                <form action="/profile/upload" method="POST" enctype="multipart/form-data" class="uploadAvatar">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                    <label for="avatar">
+                        <div class="avatarBox upd" style="background-image: url('<%= user.avatarPath %>')"></div>
+                    </label>
+
+                    <input type="file" id="avatar" name="avatar">
+                    <span class="fileName"></span>
+
+                    <button type="submit" class="btnSend"><i class="fas fa-share-square"></i></button>
+                    <a href="#" class="clear"><i class="fas fa-times"></i></a>
+
+                    <% if (user.avatarPath == "/img/ava_default.png") { %>
+                        <a href="#" class="delete"><i class="fas fa-times"></i></a>
+					<% } else { %>
+                        <a href="#" class="delete show"><i class="fas fa-times"></i></a>
+                    <% } %>
+                </form>
+
+            </div>
+            <a class="button-ex profileBtn" href="#">Edit Profile</a>
+        </div>
+        <div class="body">
+            <div class="left-column">
+                <div class="posts">
+                    <h4 class="title">The last 3 posts</h4>
+                    <div class="post">
+                    
+                        <p class="post-text">Lorem ipsum dolor sit  eiusmod  amet...</p>
+                        <div class="date">
+                            <p>10:25 PM</p>
+                        </div>
+                    </div>	
+                    <div class="post">
+    
+                        <p class="post-text">Lorem ipsum dolor sit  eiusmod  amet...</p>
+                        <div class="date">
+                            <p>10:25 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        
+                        <p class="post-text">Lorem ipsum dolor sit  eiusmod  amet...</p>
+                        <div class="date">
+                            <p>10:25 PM</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="contact-info">
+                    <h4 class="title">Contact info</h4>
+                    
+                    <form action="/">
+                        <div class="form-group">
+                            <label for="#emailProfile">Email</label>
+                            <!--<input type="email" id="#emailProfile">-->
+                            <div class="email"><%= user.email %></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="#mobileProfile">Mobile</label>
+                            <!--<input type="tel" id="#mobileProfile">-->
+                            <div class="mobile"><%= user.mobile %></div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="friends">
+                    <h4 class="title">Friends</h4>
+
+                    <div class="flex-box">
+                        <div class="friend">
+                            <div class="ava"><img src="/img/ava2.png" alt=""></div>
+                        </div>
+                        <div class="friend">
+                            <div class="ava"><img src="/img/ava2.png" alt=""></div>
+                        </div>
+                        <div class="friend">
+                            <div class="ava"><img src="/img/ava2.png" alt=""></div>
+                        </div>
+                        <div class="friend">
+                            <div class="ava"><img src="/img/ava2.png" alt=""></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a class="button-ex profileBtn" href="/chat">Join chat</a>
+            <a class="button-ex profileBtn" href="/logout">Log out</a>
+        </div>
+    </div>
+</div>

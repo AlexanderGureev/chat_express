@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <title>Email CHATER</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <style>
+        .main {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .btn {
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 30px;
+            color: #fff;
+            background: linear-gradient(135deg, #82A5F6, #2B6AAF);
+            box-shadow: 0 10px 25px rgba(0,0,0, .2);
+            border: none;
+        }
+        td .header {
+            background: #fff url("http://localhost:8080/img/bg.svg") no-repeat center;
+            background-size: cover;
+        }
+        td.body {
+            background: linear-gradient(to right, #ecf2f5, #f2fcfe);
+
+        }
+    </style>
+</head>
+
+<body style='margin: 0; padding: 0;'>
+    <table border='0' cellpadding='0' cellspacing='0' width='100%'>
+        <tr>
+            <td>
+                <table align='center' border='0' cellpadding='0' cellspacing='0' width='600' style='border-collapse: collapse; '>
+                    <tr>
+                        <td>
+                            <table class='main' align='center' border='0' cellpadding='0' cellspacing='0' width='600'>
+                                <tr>
+                                    <td align='center' class="header">
+                                        <img src='http://localhost:8080/img/logo.svg' alt='Email chater' width='300' height='225'
+                                            style='display: block;' />
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style='padding: 40px 30px 40px 30px;' class="body">
+                                        <table border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                            <tr>
+                                                <td style='color: #153643; font-size: 24px;'>
+                                                    <b>Здравствуйте, <%= username %></b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style='padding: 20px 0 30px 0;'>
+                                                    <p style='padding-bottom: 15px; font-size: 16px;' >На вашем аккаунте был сброшен пароль.</p>
+                                                    <div
+                                                        class='btn-center' style='text-align: center; margin-top: 25px; margin-bottom: 20px'>
+                                                        <a href='<%= url %>' class='btn-ex'>Перейти на сайт</a>
+                                                    </div>
+                                                </td>
+                                                <tr>
+                                                    <td bgcolor='#0f0f0f' style='padding: 30px 30px 30px 30px; font-size: 12px; color: white'>
+                                                        <p>Задать интересующий Вас вопрос Вы может на
+                                                            <a href='#'
+                                                                style='text-decoration: none; color: #4D73CB'>сайте.</a>
+                                                        </p>
+                                                        <p>С уважением, администрация CHATER.RU</p>
+                                                    </td>
+                                                </tr>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>"

@@ -1,0 +1,85 @@
+<div class="register-form wow zoomInRight" data-wow-duration="1.5s" data-wow-delay="1.4s">
+	<div class="register-container">
+		<form action="/register" method="post" class="register">
+
+			<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+			<div class="form-header">
+				<h3>Регистрация</h3>
+
+				<span class="tooltipError" data-tooltip-content="#tooltip_content"></span>
+				<div class="tooltip_templates">
+					<span id="tooltip_content">
+						<% include _messages %>
+					</span>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<label for="emailReg">Электронная почта</label>
+				<input type="email" name="emailReg" id="emailReg">
+				<div id="tooltipEmailReg" class="validation"></div>
+			</div>
+
+			<div class="form-group">
+				<label for="loginReg">Имя пользователя</label>
+				<input type="text" name="loginReg" id="loginReg">
+				<div id="tooltipLoginReg" class="validation"></div>
+			</div>
+
+			<div class="form-group">
+				<label for="passReg">Пароль</label>
+				<input type="password" name="passReg" id="passReg">
+				<div id="tooltipPasswordReg" class="validation"></div>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="button-ex reg">
+					<i class="fas fa-circle-notch fa-spin"></i>Регистрация</button>
+				<a href="#" id="btnAuth">Уже зарегистрированы?</a>
+			</div>
+
+		</form>
+	</div>
+
+	<div class="auth-container">
+		<form action="/auth" method="post" class="auth">
+
+			<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+			<div class="form-header">
+				<h3>Авторизация</h3>
+			</div>
+
+			<div class="form-group">
+				<label for="loginAuth">Имя пользователя</label>
+				<input type="text" name="loginAuth" id="loginAuth">
+				<div id="tooltipLoginAuth" class="validation"></div>
+			</div>
+
+			<div class="form-group">
+				<label for="passAuth">Пароль</label>
+				<input type="password" name="passAuth" id="passAuth">
+				<div id="tooltipPasswordAuth" class="validation"></div>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="button-ex auth">
+					<i class="fas fa-circle-notch fa-spin"></i>Войти</button>
+				<a href="#" id="btnRegister">Зарегистрировать новый аккаунт</a>
+				<a href="/forgot" id="btnForgotPassword">Забыл пароль?</a>
+			</div>
+			<div class="socialAuth">
+				<a href="/auth/vkontakte">
+					<img src="img/vk.svg" alt="">
+				</a>
+				<a href="/auth/google/">
+					<img src="img/google-plus.svg" alt="">
+				</a>
+				<a href="/auth/twitter">
+					<img src="img/twitter.svg" alt="">
+				</a>
+				<h4>Вход через соц. сети</h4>
+			</div>
+		</form>
+	</div>
+</div>

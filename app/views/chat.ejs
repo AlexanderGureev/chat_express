@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title> <%= title %> </title>
+    <!-- <style>body { opacity: 0; overflow-x: hidden; } html { background-color: #1a1a1a; }</style> -->
+
+</head>
+
+<body class="is-chat">
+
+    <div class="preloader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
+    
+    <div class="overflow-container">
+        
+        <header class="chat-header">
+            <div class="logo">
+                <img src="img/logo.svg" alt="">
+                <h1>Chater</h1>
+            </div>
+    
+            <div class="flex-container">
+                <div class="link-home">
+                    <a href="/">Home</a>
+                </div>
+    
+                <div class="search">
+                    <input type="text" name="search" id="searchInput" placeholder="Search">
+                    <span class="find">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+    
+                <div class="question">
+                    <i class="fas fa-question"></i>
+                </div>
+            </div>
+        </header>
+    
+        <div class="left-side-bar">
+            <span class="toggle"></span>
+            <div class="collapsed-bar" id="left-bar">
+                <div class="closes"></div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Messages</a>
+                        </li>
+                        <li>
+                            <a href="#">Settings</a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <div class="rooms">
+                    <h3>Rooms
+                        <span class="rooms-add">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="">Project manager</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="bar-footer">
+                <div class="sign-out">
+                    <i class="fas fa-power-off"></i>
+                    <a href="">Sign out</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="main-chat">
+            <div class="chat-container">
+                <div class="posts">
+
+                </div>
+    
+                <form action="" class="send-message">
+                    <input type="text" id="input-message" placeholder="Write something">
+                    <a href="#" class="link"></a>
+                    <button type="submit" class="send"></button>
+                    <a href="#" class="smile"></a>
+                </form>
+    
+            </div>
+    
+            <div class="right-side-bar">
+                <h3>Online -
+                    <span class="online-count"> <%= online %> </span>
+                </h3>
+                <ul class="userOnline">
+                    
+                </ul>
+            </div>
+        </div>
+    
+    </div>
+    
+
+	<link rel="stylesheet" href="css/css-libs.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/media.min.css">
+	<script src="libs/scripts.min.js"></script>
+	<script src="js/common-chat.js"></script>
+	<script src="libs/socket.io.js"></script>
+    <script src="js/sockets.js"></script>
+
+</body>
+
+</html>

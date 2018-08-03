@@ -1,0 +1,37 @@
+<%- include("./layouts/header"); -%>
+
+<div id="my-page">
+	<div id="my-header">
+		<header class="site-header">
+
+			<% include partial/top-line %>
+
+				<div class="header-center">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="header-composition">
+									<h2>Конфиденциально. Удобно. Быстро.</h2>
+									<p>Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ad
+										minim veniam, quis nostrud exercitation ullamco nisi commodo consequat. </p>
+								</div>
+							</div>
+							<div class="col-lg-5 offset-lg-1 form-box">
+
+								<% if (isAuthenticated) { %>
+									<% include partial/_profile %>
+								<% } else { %>
+									<% include partial/_regforms %>
+								<% } %>
+
+							</div>
+						</div>
+					</div>
+				</div>
+		</header>
+	</div>
+</div>
+
+<%- include("./layouts/content"); -%>
+
+<%- include("./layouts/footer"); -%>
