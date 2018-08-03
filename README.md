@@ -1,2 +1,2 @@
-Online chat Node js
-websocket, mongodb, express
+Online chat Node js.
+Websocket, mongodb, express
