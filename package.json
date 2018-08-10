@@ -4,7 +4,8 @@
   "description": "",
   "main": "./bin/main.js",
   "scripts": {
-    "start": "nodemon ./bin/main.js",
+    "start": "node ./bin/main.js",
+    "start:dev": "nodemon ./bin/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "alex_ga",
