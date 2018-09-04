@@ -19,8 +19,8 @@ function sendMail(mailOption) {
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: "gureev.alex95@gmail.com",
-                pass: "469090812Ss"
+                user: "",
+                pass: ""
             }
         });
 
